@@ -29,10 +29,10 @@ namespace testloop2.Test
 
             IWebDriver driver = new ChromeDriver();
 
-            driver.Navigate().GoToUrl("https://jcibe--eodbprjcts.sandbox.my.site.com/SolutionNavigator/s/login/?language=en_US&country=US&region=NAM");
+            driver.Navigate().GoToUrl("https://www.selenium.dev/");
             //driver.Manage().Window.Maximize();
             Thread.Sleep(5000);
-            Assert.That(driver.Title, Is.EqualTo("Login"));
+            Assert.That(driver.Title, Is.EqualTo("Selenium"));
             Actions action = new Actions(driver);
             action.SendKeys(Keys.F11);
             action.Build().Perform();
