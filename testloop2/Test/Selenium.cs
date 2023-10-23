@@ -8,11 +8,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
+using System.Runtime.InteropServices;
 
 namespace testloop2.Test
 {
     internal class Selenium
     {
+        [DllImport("user32.dll")]
+        public static extern bool SetCursorPos(int X, int Y);
+
         [Test]
         public void fisrtTestcase()
         {
@@ -34,7 +39,15 @@ namespace testloop2.Test
             action.MoveByOffset(randomNumber1, randomNumber2).ContextClick().Perform();
             action.GetActiveKeyboard();
             Thread.Sleep(1000);
+
+            Random a = new Random();
+            Random b = new Random();
+            int x = a.Next(0, 500);
+            int y = b.Next(0, 500);
+            // Move the mouse cursor to (x, y)
+            SetCursorPos(x, y);
             driver.Quit();
+
 
 
 
